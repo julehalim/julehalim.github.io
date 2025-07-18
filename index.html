@@ -1018,6 +1018,13 @@
                             <div class="form-error" id="messageError"></div>
                         </div>
                         <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+                        <script>
+                        // Disable submit button until EmailJS is loaded
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var submitBtn = document.getElementById('submitBtn');
+                            submitBtn.disabled = true;
+                        });
+                        </script>
                         <div class="form-success" id="formSuccess"></div>
                     </form>
                 </div>
@@ -1084,6 +1091,9 @@
             script.onload = function() {
                 if(window.emailjs) {
                     emailjs.init('Ymv_A6Lrf4yfFr7Ii'); // <-- Updated with your EmailJS User ID
+                    // Enable submit button when EmailJS is loaded
+                    var submitBtn = document.getElementById('submitBtn');
+                    if (submitBtn) submitBtn.disabled = false;
                 }
             };
             document.head.appendChild(script);
