@@ -27,19 +27,32 @@
             --transition: all 0.3s ease;
         }
 
-        [data-theme="dark"] {
-            --primary-color: #3498db;
-            --secondary-color: #2980b9;
-            --accent-color: #e74c3c;
-            --text-color: #ecf0f1;
-            --text-light: #bdc3c7;
-            --bg-color: #2c3e50;
-            --bg-secondary: #34495e;
-            --bg-tertiary: #4a5f7a;
-            --card-bg: #34495e;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
-        }
+    [data-theme="dark"] {
+        --primary-color: #3498db;
+        --secondary-color: #2980b9;
+        --accent-color: #e74c3c;
+        --text-color: #ecf0f1;
+        --text-light: #bdc3c7;
+        --bg-color: #2c3e50;
+        --bg-secondary: #34495e;
+        --bg-tertiary: #4a5f7a;
+        --card-bg: #34495e;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="dark"] .contact {
+        background: #3a4a5d !important;
+        color: #fff !important;
+    }
+    [data-theme="dark"] .contact-item {
+        background: rgba(255,255,255,0.15) !important;
+        color: #fff !important;
+    }
+    [data-theme="dark"] .contact a {
+        color: #fff !important;
+        text-decoration: underline;
+    }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -886,6 +899,7 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-controls">
+                <!-- Theme toggle removed -->
                 <button class="theme-toggle" id="themeToggle">🌙</button>
                 <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
             </div>
@@ -921,17 +935,14 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>I'm an AI engineer and developer with a strong passion for healthcare and ethical technology. With a background in psychology and expertise in machine learning, computer vision, and NLP, I build intelligent systems that help solve real-world problems, especially in medical and human-centred contexts.</p>
-                    <p>I enjoy working on impactful projects, exploring new tools, and learning from the AI community.</p>
-                    <h3 style="margin-bottom:1rem;font-size:1.5rem;color:var(--primary-color);font-weight:600;">Skills Overview</h3>
-                    <div class="skills" id="skillsContainer">
-                        <!-- Skills will be populated here -->
-                    </div>
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;max-width:700px;margin:0 auto;">
+                <h2 style="margin-bottom:1.5rem;">About Me</h2>
+                <p style="font-size:1.1rem;margin-bottom:1.5rem;">I'm an AI engineer and developer with a strong passion for healthcare and ethical technology. With a background in psychology and expertise in machine learning, computer vision, and NLP, I build intelligent systems that help solve real-world problems, especially in medical and human-centred contexts.</p>
+                <p style="font-size:1.1rem;margin-bottom:2rem;">I enjoy working on impactful projects, exploring new tools, and learning from the AI community.</p>
+                <h3 style="margin-bottom:1rem;font-size:1.5rem;color:var(--primary-color);font-weight:600;">Skills Overview</h3>
+                <div class="skills" id="skillsContainer" style="justify-content:center;">
+                    <!-- Skills will be populated here -->
                 </div>
-                <div class="about-image">💡</div>
             </div>
         </div>
     </section>
@@ -961,72 +972,39 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2>Get In Touch</h2>
-                    <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.</p>
-                    
-                    <div class="contact-item">
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:400px;">
+                <h2 style="font-size:2.5rem;margin-bottom:1.5rem;">Get In Touch</h2>
+                <p style="font-size:1.1rem;margin-bottom:2rem;max-width:500px;">I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.</p>
+                <div style="background:rgba(255,255,255,0.08);padding:2rem 2.5rem;border-radius:16px;display:flex;flex-direction:column;align-items:center;gap:1.5rem;max-width:420px;width:100%;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+                    <div class="contact-item" style="width:100%;background:rgba(255,255,255,0.13);padding:1rem;border-radius:10px;display:flex;align-items:center;gap:1rem;">
                         <div class="contact-icon">✉️</div>
                         <div>
-                            <h4>Email</h4>
+                            <h4 style="margin-bottom:0.3rem;">Email</h4>
                             <p><a href="mailto:jule.valendo@gmail.com" style="color:white;text-decoration:underline;">jule.valendo@gmail.com</a></p>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
+                    <div class="contact-item" style="width:100%;background:rgba(255,255,255,0.13);padding:1rem;border-radius:10px;display:flex;align-items:center;gap:1rem;">
                         <div class="contact-icon">
                             <svg width="24" height="24" fill="white" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.371.823 1.102.823 2.222v3.293c0 .322.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
                             </svg>
                         </div>
                         <div>
-                            <h4>GitHub</h4>
+                            <h4 style="margin-bottom:0.3rem;">GitHub</h4>
                             <p><a href="https://github.com/julehalim" target="_blank" style="color:white;text-decoration:underline;">github.com/julehalim</a></p>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
+                    <div class="contact-item" style="width:100%;background:rgba(255,255,255,0.13);padding:1rem;border-radius:10px;display:flex;align-items:center;gap:1rem;">
                         <div class="contact-icon">
                             <svg width="24" height="24" fill="white" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.597 2.001 3.597 4.601v5.595z"/>
                             </svg>
                         </div>
                         <div>
-                            <h4>LinkedIn</h4>
+                            <h4 style="margin-bottom:0.3rem;">LinkedIn</h4>
                             <p><a href="https://linkedin.com/in/jule-valendo-halim/" target="_blank" style="color:white;text-decoration:underline;">linkedin.com/in/jule-valendo-halim/</a></p>
                         </div>
                     </div>
-                </div>
-
-                <div class="contact-form">
-                    <h3>Send a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
-                            <div class="form-error" id="nameError"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                            <div class="form-error" id="emailError"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <div class="form-error" id="messageError"></div>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
-                        <script>
-                        // Disable submit button until EmailJS is loaded
-                        document.addEventListener('DOMContentLoaded', function() {
-                            var submitBtn = document.getElementById('submitBtn');
-                            submitBtn.disabled = true;
-                        });
-                        </script>
-                        <div class="form-success" id="formSuccess"></div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -1075,41 +1053,20 @@
         window.addEventListener('scroll', handleFooterVisibility);
         window.addEventListener('resize', handleFooterVisibility);
         document.addEventListener('DOMContentLoaded', handleFooterVisibility);
-        // EmailJS integration (add this script before other JS)
-        // 1. Go to https://www.emailjs.com/ and sign up for a free account.
-        // 2. Create an email service and template (set recipient to jule.valendo@gmail.com).
-        // 3. Get your User ID and Service ID and Template ID from EmailJS dashboard.
-        // 4. Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_USER_ID' below.
-        // 5. You can customize the template fields in EmailJS to match 'name', 'email', 'message'.
-        // 6. For security, do not expose sensitive info. EmailJS is designed for client-side use.
-        
-        // Add EmailJS SDK
-        (function(){
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = 'https://cdn.emailjs.com/dist/email.min.js';
-            script.onload = function() {
-                if(window.emailjs) {
-                    emailjs.init('Ymv_A6Lrf4yfFr7Ii'); // <-- Updated with your EmailJS User ID
-                    // Enable submit button when EmailJS is loaded
-                    var submitBtn = document.getElementById('submitBtn');
-                    if (submitBtn) submitBtn.disabled = false;
-                }
-            };
-            document.head.appendChild(script);
-        })();
         // ...existing code...
         const body = document.body;
         
+        // Theme toggle and dark mode logic removed
+
         // Load saved theme or default to light
+        const themeToggle = document.getElementById('themeToggle');
         const savedTheme = localStorage.getItem('theme') || 'light';
         body.setAttribute('data-theme', savedTheme);
         themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-        
+
         themeToggle.addEventListener('click', () => {
             const currentTheme = body.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
             body.setAttribute('data-theme', newTheme);
             themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
             localStorage.setItem('theme', newTheme);
@@ -1358,80 +1315,7 @@
 
         // Filter functionality is now handled in renderFilterButtons()
 
-        // Form validation and submission
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        function validateForm() {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            let isValid = true;
-            document.querySelectorAll('.form-error').forEach(error => error.textContent = '');
-            document.getElementById('formSuccess').textContent = '';
-            if (!name) {
-                document.getElementById('nameError').textContent = 'Name is required';
-                isValid = false;
-            } else if (name.length < 2) {
-                document.getElementById('nameError').textContent = 'Name must be at least 2 characters';
-                isValid = false;
-            }
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!email) {
-                document.getElementById('emailError').textContent = 'Email is required';
-                isValid = false;
-            } else if (!emailRegex.test(email)) {
-                document.getElementById('emailError').textContent = 'Please enter a valid email address';
-                isValid = false;
-            }
-            if (!message) {
-                document.getElementById('messageError').textContent = 'Message is required';
-                isValid = false;
-            } else if (message.length < 10) {
-                document.getElementById('messageError').textContent = 'Message must be at least 10 characters';
-                isValid = false;
-            }
-            return isValid;
-        }
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            if (validateForm()) {
-                submitBtn.textContent = 'Sending...';
-                submitBtn.disabled = true;
-                // Send email via EmailJS
-                if (window.emailjs) {
-                    emailjs.send('service_cjsatut', 'template_56oibq4', {
-                        name: document.getElementById('name').value,
-                        email: document.getElementById('email').value,
-                        message: document.getElementById('message').value
-                    })
-                    .then(function(response) {
-                        document.getElementById('formSuccess').textContent = 'Message sent successfully! I\'ll get back to you soon.';
-                        contactForm.reset();
-                        submitBtn.textContent = 'Send Message';
-                        submitBtn.disabled = false;
-                    }, function(error) {
-                        document.getElementById('formSuccess').textContent = 'Sorry, there was an error sending your message. Please try again later.';
-                        submitBtn.textContent = 'Send Message';
-                        submitBtn.disabled = false;
-                        // Debug: log error details to console
-                        console.error('EmailJS send error:', error);
-                        if (error && error.text) {
-                            console.error('Error text:', error.text);
-                        }
-                        if (error && error.status) {
-                            console.error('Error status:', error.status);
-                        }
-                        if (error && error.response) {
-                            console.error('Error response:', error.response);
-                        }
-                    });
-                } else {
-                    document.getElementById('formSuccess').textContent = 'Email service not loaded. Please try again later.';
-                    submitBtn.textContent = 'Send Message';
-                    submitBtn.disabled = false;
-                }
-            }
-        });
+        // Send a Message form and related JS removed
 
         // Scroll to top button
         const scrollTopBtn = document.getElementById('scrollTop');
